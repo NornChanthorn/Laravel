@@ -6,12 +6,13 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
+
 {
-    //
+    
     function login(Request $req){
         $customer = Customer::where(['email'=>$req->email])->first();
         if(!$customer || !Hash::check($req->password,$customer->password)){
-            return "Incorrect";
+            return view("login");
         }
         else{
             $req->session()->put('customer',$customer);

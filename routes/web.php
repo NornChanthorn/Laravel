@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdmincustomerController;
+use App\Http\Controllers\AdminproductController;
+
+
 use Illuminate\Support\Facades\Session;
 
 /*
@@ -39,3 +44,49 @@ Route::get("removecart/{id}",[ProductController::class,'removeCart']);
 Route::get("ordernow",[ProductController::class,'orderNow']);
 Route::post("orderplace",[ProductController::class,'orderPlace']);
 Route::get("myorders",[ProductController::class,'myOrders']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Admin page 
+
+Route::get('/admin', function () {
+    return view('admin.login');
+});
+
+// Route::get('/admin/login', function () {
+//     return view('admin.login');
+// });
+
+Route::post("/admin" , [AdminController::class , 'login']);
+
+
+Route::get('/admin/main', function () {
+    return view('admin.main');
+});
+
+// Route::get('/admin/product', function () {
+//     return view('admin.product');
+// });
+
+// Route::get("/admin/product" , [AdminController::class , 'index_product']);
+// Route::post("/admin/create" , [AdminController::class , 'store_product']);
+// Route::get("/admin/create" , [AdminController::class , 'create_product']);
+// Route::get("/admin/show/{id}" , [AdminController::class , 'show_product']);
+
+
+Route::resource('admin/products', AdminproductController::class);
+Route::resource('admin/customers', AdmincustomerController::class);
