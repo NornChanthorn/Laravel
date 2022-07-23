@@ -24,9 +24,7 @@ if (Session::has('customer')) {
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/myorders">MyOrder</a>
-        </li>
+        
 
         <form action="/search" class="d-flex">
           <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
@@ -47,6 +45,13 @@ if (Session::has('customer')) {
         </ul>
 
       </div>
+
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/myorders">MyOrder</a>
+        </li>
+        <form class="d-flex">
+      <a class="nav-link active" aria-current="page" href="/cartlist">Cart({{$total}})</a>
+    </form>
       @else
       <div>
         <a href="/login" style="text-decoration:none ">Login</a>
@@ -54,8 +59,6 @@ if (Session::has('customer')) {
       </div>
       @endif
     </div>
-    <form class="d-flex">
-      <a class="nav-link active" aria-current="page" href="/cartlist">Cart({{$total}})</a>
-    </form>
+    
   </div>
 </nav>

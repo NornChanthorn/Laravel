@@ -1,11 +1,26 @@
+@if(Session::has('customer'))
+
+
+
+{{ redirect()->to('/')->send(); }}
+
+
+@else
+
 @extends('master')
 @section("content")
+
+
 
 <style>
     .btn-primary:hover {
         opacity: 0.8;
     }
 </style>
+
+
+
+
 
 <div class="container">
     <div class="row">
@@ -16,6 +31,7 @@
 
         <div class="col-md" style="margin:5% 3% 5% 0%; text-align:center">
             <div class="container custom-login" style=" border-radius:20px; background-color:#0097a7">
+
                 <form action="login" method="POST">
                     <div class="form-floating mb-3">
                         @csrf
@@ -44,4 +60,7 @@
 
     </div>
 </div>
+
 @endsection
+
+@endif
