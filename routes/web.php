@@ -49,6 +49,13 @@ Route::get("myorders",[ProductController::class,'myOrders']);
 
 
 
+// Dropdown 
+
+Route::get("/bracelet",[ProductController::class,'showBracelet']);
+Route::get("/necklace",[ProductController::class,'showNecklace']);
+Route::get("/ring",[ProductController::class,'showRing']);
+Route::get("/other",[ProductController::class,'showOther']);
+
 
 
 
