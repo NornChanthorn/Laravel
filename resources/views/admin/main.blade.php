@@ -1,3 +1,10 @@
+@if(Session::has('admin'))
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,11 +60,16 @@
                         </a>
                     </li>
 
+
+                  
+
+
                   
 
                 </ul>
             </div>
-
+          <h1>Admin</h1>
+          <a href="main/logout">logout</a>
            
         </div>
 
@@ -86,8 +98,12 @@
 </body>
 </html>
 
+@else 
+
+{{ redirect()->to('admin')->send(); }}
 
 
+@endif
 
 
 

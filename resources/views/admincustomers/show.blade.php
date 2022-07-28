@@ -1,5 +1,5 @@
 
-@extends('master')
+@extends('adminmaster')
 @section('content')
 
 <tr>

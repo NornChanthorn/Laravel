@@ -8,27 +8,40 @@ if (Session::has('customer')) {
 ?>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light nav-bk">
   <div class="container-fluid">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <a class="navbar-brand" href="/">Souvenir</a>
+          <a class="navbar-brand text-white fw-bold" href="/">Souvenir</a>
     
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+              <li class="nav-item dropdown">
+                <a class=" text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/bracelet">Bracelet</a></li>
+                  <li><a class="dropdown-item" href="/necklace">Necklace</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/ring">Ring</a></li>
+                  <li><a class="dropdown-item" href="/other">Other</a></li>
+
+                </ul>
+              </li>
+        
+      </ul>
 
         
-
-        <form action="/search" class="d-flex">
+        <form action="/search" class="d-flex justify-content-center align-items-center">
           <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn search-btn " type="submit">Search</button>
         </form>
 
       </ul>
@@ -46,19 +59,26 @@ if (Session::has('customer')) {
 
       </div>
 
-      <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/myorders">MyOrder</a>
-        </li>
-        <form class="d-flex">
-      <a class="nav-link active" aria-current="page" href="/cartlist">Cart({{$total}})</a>
-    </form>
+         <a href="/myorders" style="text-decoration:none " class="text-white mx-1">MyOrder</a>
+        <a href="/cartlist" style="text-decoration:none " class="text-white mx-2">Cart({{$total}})</a>
       @else
       <div>
-        <a href="/login" style="text-decoration:none ">Login</a>
-        <a href="/register" style="text-decoration:none ">Register</a>
+        <a href="/login" style="text-decoration:none " class="text-white mx-1">Login</a>
+        <a href="/register" style="text-decoration:none " class="text-white mx-2">Register</a>
+        @endif
+        <a href="/admin" style="text-decoration:none " class="text-white mx-2">Admin</a>
+
       </div>
-      @endif
+     
     </div>
     
   </div>
-</nav>
+</nav>  
+
+
+
+
+
+
+
+

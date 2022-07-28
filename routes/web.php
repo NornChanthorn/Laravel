@@ -97,3 +97,9 @@ Route::get('/admin/main', function () {
 
 Route::resource('admin/products', AdminproductController::class);
 Route::resource('admin/customers', AdmincustomerController::class);
+
+
+Route::get("admin/main/logout", function () {
+    Session::forget('admin');
+    return redirect('admin');
+});

@@ -1,6 +1,6 @@
 
 
-@extends('master')
+@extends('adminmaster')
 @section('content')
 <tr>
             <h1>Hi</h1>

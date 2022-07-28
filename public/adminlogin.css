@@ -1,0 +1,114 @@
+/* ._col {
+    width: 50vw;
+    height: 100vh;
+}
+
+
+
+._col ._image{
+    width: 100%;
+    background-color: #1d7874;
+    
+}
+._col .image img {
+    width: 500px;
+    opacity: 0.2;
+
+}
+
+._container {
+    overflow-y: hidden;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.top-button{
+    text-align: center;
+     position: relative;
+    
+}
+.top-button div {
+    background-color: #d4194e;
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    position:absolute;
+    top:40;
+    right: 0
+}
+
+.submit-btn{
+    background-color: #d4194e;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color:  #ba1443;
+    color: white;
+    border-color: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+    ._col .image{
+       
+        display: none;
+    }
+     ._col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+     }
+    .form-container{
+        background-color: #1d7874;
+      
+    }
+  } */
+.main {
+    overflow: hidden;
+}
+
+._col{
+ width: 50vw;
+ height: 100vh;
+}
+._col2{
+    background-color: #1d7874;
+    display: block;
+    
+}
+._col2 img {
+    width: 600px;
+    opacity: 0.3;
+}
+._col1 {
+    padding: 80px;
+}
+
+
+.submit-btn{
+    background-color: #d4194e;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color:  #ba1443;
+    color: white;
+    border-color: transparent;
+}
+
+
+@media only screen and (max-width: 800px) {
+    ._col2 {
+       
+        display: none;
+    }
+    ._col{
+        width: 100vw;
+    }
+  
+     
+
+}

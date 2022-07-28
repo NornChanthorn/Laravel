@@ -39,6 +39,7 @@ class AdmincustomerController extends Controller
    
     public function show(Customer $customer)
     {
+        
         return view('admincustomers.show',compact('customer'));
     } 
      

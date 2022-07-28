@@ -1,0 +1,129 @@
+.card-1-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.card-1-container .des p {
+    font-size: 0.7rem;
+}
+
+.card-1-container .col{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     background-color: white;
+    flex-basis: 22%;
+    min-width: 250px ;
+   margin: 15px auto;
+   border-radius: 20px;
+}
+.card-1-container .col img {
+    width: 220px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.card-1-container .col img , .card-1-container .col .des  {
+    margin: 18px 0;
+}
+
+.card-1-container .col .des h4 , .card-1-container .col .des p {
+    margin: 9px 0;
+}
+
+.star-icon {
+    margin: 9px 0;
+}
+
+.des p {
+    color:grey;
+}
+
+.bi-star-fill {
+    color:rgb(230, 153, 31);
+}
+
+.last-star {
+    color:black;
+}
+
+.buy_now {
+    width: 100%;
+    height: 50px;
+    background-color: #eefafa;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color:black;
+    
+}
+
+a{
+    text-decoration:  none;
+}
+
+.image {
+    position: relative;
+   
+   
+}
+
+.image_img {
+    display: block;
+    width: 100%;
+}
+.image_overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.25s;
+
+}
+.image_overlay > * {
+    transform: translateY(20px);
+    transition: 0.25s;
+}
+
+.image_overlay:hover > * {
+    transform: translateY(0);
+}
+.image_title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.image_des {
+    font-size: 4.25rem;
+    margin-top: 0.25rem;
+}
+
+.image_overlay:hover {
+    opacity: 1;
+}
+.blur{
+    backdrop-filter: blur(3px);
+}
+
+.blur {
+    padding: 15px;
+}
+.blur > * {
+    margin: 4px 0;
+}
+.blur p {
+    font-size: 0.7rem;
+}

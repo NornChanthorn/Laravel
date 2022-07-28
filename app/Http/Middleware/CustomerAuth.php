@@ -16,7 +16,7 @@ class CustomerAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->path()=="login" && $request->session()->has('user')){
+        if($request->path()=="login" && $request->session()->has('customer')){
             return redirect('/');
         }
         return $next($request);

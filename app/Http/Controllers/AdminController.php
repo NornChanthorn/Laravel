@@ -10,62 +10,62 @@ class AdminController extends Controller
 
 
 
-    // public function index_product()
-    // {
-    //     $products = Product::all();
+    public function index_product()
+    {
+        $products = Product::all();
     
-    //     return view('admin.product',compact('products'))
-    //         ->with('i', (request()->input('page', 1) - 1) * 5);
-    // }
+        return view('admin.product',compact('products'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
-    // public function create_product()
-    // {
-    //     return view('admin.create');
+    public function create_product()
+    {
+        return view('admin.create');
 
-    // }
+    }
 
-    // public function store_product(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'price' => 'required',
-    //         'category' => 'required',
-    //         'description' => 'required',
-    //         'gallery' => 'required',
+    public function store_product(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'gallery' => 'required',
 
-    //     ]);
+        ]);
     
-    //     Product::create($request->all());
+        Product::create($request->all());
      
-    //     return redirect("/admin/product")
-    //                     ->with('success','Product created successfully.');
-    // }
+        return redirect("/admin/product")
+                        ->with('success','Product created successfully.');
+    }
 
-    // public function show_product(Product $product)
-    // {
-    //     return view('admin.show',compact('product'));
-    // } 
+    public function show_product(Product $product)
+    {
+        return view('admin.show',compact('product'));
+    } 
     
-    // public function edit_product(Product $product)
-    // {
-    //     return view('admin.edit',compact('product'));
-    // }
+    public function edit_product(Product $product)
+    {
+        return view('admin.edit',compact('product'));
+    }
 
-    // public function update_product(Request $request, Product $product)
-    // {
-    //     $request->validate([
-    //       'name' => 'required',
-    //       'price' => 'required',
-    //       'category' => 'required',
-    //       'description' => 'required',
-    //       'gallery' => 'required',
-    //     ]);
+    public function update_product(Request $request, Product $product)
+    {
+        $request->validate([
+          'name' => 'required',
+          'price' => 'required',
+          'category' => 'required',
+          'description' => 'required',
+          'gallery' => 'required',
+        ]);
     
-    //     $product->update($request->all());
+        $product->update($request->all());
     
-    //     return redirect("/admin/product")
-    //                     ->with('success','Product updated successfully');
-    // }
+        return redirect("/admin/product")
+                        ->with('success','Product updated successfully');
+    }
     
 
 
@@ -73,10 +73,12 @@ class AdminController extends Controller
     function login(Request $req){
       $admin = Admin::where(['email'=>$req->email])->first();
       if(!$admin || !Hash::check($req->password ,$admin->password)){
-        return "Username or password is not matched"; 
+        // return "Username or password is not matched"; 
+        return view('admin/login',['error'=>"Something Wrong Try Again"]);
       }else {
-        // $req->session()->put('customer',$customer);
+        $req->session()->put('admin',$admin);
         return redirect('/admin/main');
+       
       }
 
     }

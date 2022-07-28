@@ -11,8 +11,9 @@ class ProductController extends Controller
 {
     //
     function index(){
+        $hello ="Panha";
         $data=Product::all();
-        return view('product',['product'=>$data]);
+        return view('product',['product'=>$data ,'hi'=>$hello]);
     }
     function detail($id){
         $data = Product::find($id);
@@ -85,5 +86,35 @@ class ProductController extends Controller
         ->where('orders.customer_id',$customerId)
         ->get();
         return view('myorders',['orders'=>$orders]);
+    }
+
+
+    // category  
+
+
+    function showBracelet ()
+    {
+        $data = Product::where('category','like','%bracelet%')->get();
+
+        return view('bracelet',['product'=>$data]);
+        
+    }
+
+    function showNecklace ()
+    {
+        $data = Product::where('category','like','%necklace%')->get();
+        return view("necklace",['product'=>$data]);
+    }
+
+    function showRing ()
+    {
+        $data = Product::where('category','like','%ring%')->get();
+        return view("ring",['product'=>$data]);
+    }
+
+    function showOther ()
+    {
+        $data = Product::where('category','like','%other%')->get();
+        return view("other",['product'=>$data]);
     }
 }

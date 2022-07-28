@@ -22,6 +22,8 @@
       <link rel="stylesheet" href="{{ url('slider.css') }}">
       <link rel="stylesheet" href="{{ url('navbar.css') }}">
       <link rel="stylesheet" href="{{ url('card.css') }}">
+      <link rel="stylesheet" href="{{ url('adminlogin.css') }}">
+
 
 
 
@@ -29,9 +31,8 @@
 </head>
 
 <body>
-    {{View::make('header')}}
+   
     @yield('content')
-    {{View::make('footer')}}
 
     <script src="{{ url('sidenav.js') }}"></script>
     <script src="{{ url('slider.js') }}"></script>
