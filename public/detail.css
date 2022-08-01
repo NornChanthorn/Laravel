@@ -1,0 +1,15 @@
+.detail-img{
+    height: 500px;
+    width: 470px;
+}
+.row{
+    padding: 30px;
+}
+
+.des{
+    margin-top: 10%;
+    padding: 5px;
+}
+.des h5{
+    color: rgb(29, 29, 211);
+}
