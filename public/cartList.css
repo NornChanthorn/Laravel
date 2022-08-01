@@ -1,0 +1,40 @@
+.trending-image{
+    width: 250px;
+    height: 250px;
+}
+.trending-wrapper{
+    text-align: center;
+}
+.trending-wrapper h4{
+    margin-top: 30px;
+    padding: 20px;
+}
+.des{
+    text-align: left;
+    margin-top: 7%;
+
+}
+.remove{
+    margin-top: 40px;
+}
+.btnOrder{
+    float: right;
+    margin-right: 90px;
+   
+}
+.container{
+    border-radius: 15px;
+}
+.price h5{
+    margin-top: 40px;
+    
+}
+.cart_divider{
+    border-bottom: 1px solid black;
+    margin-top:20px;
+    padding-bottom:20px;
+}
+.search-item:hover{
+   background-color: rgb(247, 243, 235);
+   border-radius: 15px;
+}
