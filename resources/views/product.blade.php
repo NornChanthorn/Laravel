@@ -93,7 +93,7 @@
 
 <!-- Product -->
 
-<div class="container">
+<div class="container mt-3">
 
 
             <div class="main_dashboard">
@@ -145,6 +145,8 @@
 
                             @endforeach
 
+
+                            <center><a href="/allProduct">View More</a></center>
 
 
                         

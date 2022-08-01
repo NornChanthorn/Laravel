@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdmincustomerController;
 use App\Http\Controllers\AdminproductController;
+use App\Http\Controllers\AdminorderController;
 
 
 use Illuminate\Support\Facades\Session;
@@ -27,13 +28,14 @@ Route::get("/login", function () {
 
 Route::get("/logout", function () {
     Session::forget('customer');
+    Session::forget('admin');
     return redirect('login');
 });
 
 Route::view('/register','register');
 Route::post("/register",[CustomerController::class,'register']);
 Route::post("/login",[CustomerController::class,'login']);
-Route::get("/",[ProductController::class,'index']);
+Route::get("/",[ProductController::class,'userindex']);
 
 Route::get("detail/{id}",[ProductController::class,'detail']);
 Route::get("search",[ProductController::class,'search']);
@@ -78,7 +80,7 @@ Route::get('/admin', function () {
 //     return view('admin.login');
 // });
 
-Route::post("/admin" , [AdminController::class , 'login']);
+Route::post("/admin" , [CustomerController::class , 'login']);
 
 
 Route::get('/admin/main', function () {
@@ -95,11 +97,13 @@ Route::get('/admin/main', function () {
 // Route::get("/admin/show/{id}" , [AdminController::class , 'show_product']);
 
 
-Route::resource('admin/products', AdminproductController::class);
-Route::resource('admin/customers', AdmincustomerController::class);
+Route::resource('admin/products', ProductController::class);
+Route::resource('admin/customers',CustomerController::class);
+Route::resource('admin/orders', AdminorderController::class);
 
+Route::get("allProduct",[ProductController::class,'allproduct']);
 
-Route::get("admin/main/logout", function () {
-    Session::forget('admin');
-    return redirect('admin');
-});
+// Route::get("admin/main/logout", function () {
+//     Session::forget('admin');
+//     return redirect('admin');
+// });

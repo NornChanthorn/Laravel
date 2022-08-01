@@ -10,7 +10,7 @@ use App\Models\Order;
 class ProductController extends Controller
 {
     //
-    function index(){
+    function userindex(){
         $hello ="Panha";
         $data=Product::all();
         return view('product',['product'=>$data ,'hi'=>$hello]);
@@ -20,8 +20,19 @@ class ProductController extends Controller
         return view('detail',['product'=>$data]);
     }
     function search(Request $req){
-        $data = Product::where('name','like','%'.$req->input('query').'%')->get();
-        return view('search',['product'=>$data]);
+        if($req->input('query')=="") {
+
+            return view('search',['product'=>"No Result"]);
+        }else {
+          
+            $data = Product::where('name','like','%'.$req->input('query').'%')->get();
+            if($data->count()==0){
+                return view('search',['product'=>"No Result"]);
+            }
+            return view('search',['product'=>$data]);
+        }
+       
+        
     }
     function addToCart(Request $req){
         if($req->session()->has('customer')){
@@ -89,7 +100,11 @@ class ProductController extends Controller
     }
 
 
-    // category  
+    function allproduct(){
+        $data= Product::all();
+        return view('allProduct', ['product'=>$data]);
+    }
+
 
 
     function showBracelet ()
@@ -117,4 +132,87 @@ class ProductController extends Controller
         $data = Product::where('category','like','%other%')->get();
         return view("other",['product'=>$data]);
     }
+
+
+
+
+
+    public function index()
+    {
+        $products = Product::All();
+    
+        return view('adminproducts.index',compact('products'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+  
+    public function create()
+    {
+        return view('adminproducts.create');
+    }
+
+    
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'gallery' => 'required',
+
+        ]);
+    
+        Product::create($request->all());
+     
+        return redirect()->route('products.index')
+                        ->with('success','Product created successfully.');
+    }
+
+   
+    public function show(Product $product)
+    {
+        return view('adminproducts.show',compact('product'));
+    } 
+     
+   
+    public function edit(Product $product)
+    {
+        return view('adminproducts.edit',compact('product'));
+    }
+    
+   
+    public function update(Request $request, Product $product)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'gallery' => 'required',
+
+        ]);
+    
+        $product->update($request->all());
+    
+        return redirect()->route('products.index')
+                        ->with('success','Product updated successfully');
+    }
+    
+  
+    public function destroy(Product $product)
+    {
+        $product->delete();
+    
+        return redirect()->route('products.index')
+                        ->with('success','Product deleted successfully');
+    }
+
+
+
+
+
+
+
+
+    
 }

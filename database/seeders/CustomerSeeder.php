@@ -18,9 +18,11 @@ class CustomerSeeder extends Seeder
     {
         //
         DB::table('customers')->insert([
-            'name' => 'Dara',
-            'email' => 'dara@gmail.com',
-            'password' => Hash::make('2222')
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('2222'),
+            'role'=>'admin'
+            
         ]);
     }
 }

@@ -35,7 +35,7 @@
 
                         
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            <button type="submit" class="btn btn-primary w-100" style="background-color:#1d7874">Edit</button>
                             </div>
                         </div>
                 

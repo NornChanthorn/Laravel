@@ -36,7 +36,7 @@
                     
                 </table>
                 <div class="pull-right">
-                            <a class="btn btn-success" href="{{ route('customers.create') }}">Add New Customer</a>
+                            <a class="btn btn-success" style="background-color:#1d7874" href="{{ route('customers.create') }}">Add New Customer</a>
                         </div>
 </div>
     

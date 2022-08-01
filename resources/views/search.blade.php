@@ -1,6 +1,12 @@
 @extends('master')
 @section("content")
 
+
+@if($product=="No Result")
+
+<h2 class="mt-3">No Product Found </h2>
+
+@else 
 <div class="container custom-product" style="border: solid black 2px">
 
   <div class="col-sm-4">
@@ -12,7 +18,8 @@
       @foreach ($product as $item)
       <div class="search-item">
         <a href="detail/{{$item['id']}}">
-          <img class="trending-image" src="{{$item['gallery']}}" class="d-block w-100" alt="...">
+        <img class="detail-img" src="/image/{{$item['category']}}/{{$item['gallery']}}" alt="">
+
           <div class="">
             <h2 style="color:black">{{$item['name']}}</h2>
             <h5 style="color:black">{{$item['description']}}</h5>
@@ -23,5 +30,5 @@
   </div>
 </div>
 </div>
-
+@endif
 @endsection

@@ -46,11 +46,12 @@ if (Session::has('customer')) {
 
       </ul>
 
-      @if(Session::has('customer'))
+      @if(Session::has('customer') && Session::get('customer')['role'] =="user")
       <div class="dropdown" style="margin-right:10px; margin-left:10px">
 
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           {{Session::get('customer')['name']}}
+          {{Session::get('customer')['id']}}
         </button>
 
         <ul class="dropdown-menu">
@@ -61,12 +62,28 @@ if (Session::has('customer')) {
 
          <a href="/myorders" style="text-decoration:none " class="text-white mx-1">MyOrder</a>
         <a href="/cartlist" style="text-decoration:none " class="text-white mx-2">Cart({{$total}})</a>
-      @else
-      <div>
+      @elseif (Session::has('admin') && Session::get('admin')['role'] =="admin") 
+                <div class="dropdown" style="margin-right:10px; margin-left:10px">
+
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{Session::get('admin')['name']}}
+                    
+                    </button>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                      <li><a class="dropdown-item" href="admin/main">Backend</a></li>
+
+                    </ul>
+
+             </div>
+             <div>
+             @else
+      
         <a href="/login" style="text-decoration:none " class="text-white mx-1">Login</a>
         <a href="/register" style="text-decoration:none " class="text-white mx-2">Register</a>
         @endif
-        <a href="/admin" style="text-decoration:none " class="text-white mx-2">Admin</a>
+        <!-- <a href="/admin" style="text-decoration:none " class="text-white mx-2">Admin</a> -->
 
       </div>
      

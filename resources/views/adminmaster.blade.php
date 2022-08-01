@@ -23,6 +23,7 @@
       <link rel="stylesheet" href="{{ url('navbar.css') }}">
       <link rel="stylesheet" href="{{ url('card.css') }}">
       <link rel="stylesheet" href="{{ url('adminlogin.css') }}">
+      <link rel="stylesheet" href="{{ url('main.css') }}">
 
 
 

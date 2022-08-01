@@ -1,0 +1,12 @@
+.link-container {
+   background-color:  #1d7874;
+   text-align: center;
+   padding: 10px 30px;
+   border-radius: 20px;
+   transition: 0.5s;
+   color: white;
+}
+.link-container:hover {
+    background-color:  #186a66;
+    color: white;
+}
