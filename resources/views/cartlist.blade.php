@@ -23,8 +23,8 @@
                         </a>
                     </div>
 
-                    <div class="col mt-2 ">
-                        <div class="des">
+                    <div class="col mt-3">
+                        <div class="des1">
                             <h4 style="color:black">{{$item->name}}</h4>
                             <h6 style="color:black">{{$item->description}}</h6>
                         </div>
@@ -41,8 +41,12 @@
                     
                 </div>
                 @endforeach
-                <a class="btn btn-success btnOrder" href="ordernow">Order Now</a>
+                <div class="row">
+                    <a class="btn btn-success btnOrder " href="ordernow">Order Now</a>
+                </div>
+                
              </div>
+
 
           
             

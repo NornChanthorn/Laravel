@@ -5,30 +5,32 @@
 .trending-wrapper{
     text-align: center;
 }
-.trending-wrapper h4{
+.trending-wrapper{
     margin-top: 30px;
     padding: 20px;
 }
-.des{
-    text-align: left;
-    margin-top: 7%;
-
+.des1{
+    text-align:left;
 }
+.des1 h6, h4{
+    margin-top: 5px;
+}
+
 .remove{
-    margin-top: 40px;
+    margin-top: 5px;
 }
 .btnOrder{
-    float: right;
-    margin-right: 90px;
+  
    
 }
 .container{
     border-radius: 15px;
 }
 .price h5{
-    margin-top: 40px;
+    margin-top: 5px;
     
 }
+
 .cart_divider{
     border-bottom: 1px solid black;
     margin-top:20px;
@@ -37,4 +39,4 @@
 .search-item:hover{
    background-color: rgb(247, 243, 235);
    border-radius: 15px;
-}
+} 
