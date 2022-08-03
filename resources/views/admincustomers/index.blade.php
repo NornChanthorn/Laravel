@@ -3,6 +3,9 @@
 @section('content')
 <div class="container mt-5">
     <h3 class="mb-3">Customer Information</h3>
+                        <div class="pull-right mb-4">
+                            <a class="btn btn-success" style="background-color:#1d7874" href="{{ route('customers.create') }}">Add New Customer</a>
+                        </div>
             <table class="table table-bordered">
                     <tr>
                         <th>No</th>
@@ -35,9 +38,9 @@
 
                     
                 </table>
-                <div class="pull-right">
-                            <a class="btn btn-success" style="background-color:#1d7874" href="{{ route('customers.create') }}">Add New Customer</a>
-                        </div>
+
+                <a class="p-2 mt-2"  href="/admin/main">Back</a>
+                       
 </div>
     
 

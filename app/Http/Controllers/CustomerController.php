@@ -27,11 +27,11 @@ class CustomerController extends Controller
     function register(request $req){
         //return $req->input();
     
-        $user ='user';
+        // $user ='user';
         $customer = new Customer;
         $customer->name = $req->name;
         $customer->email = $req->email;
-        $customer->role=$req->$user;
+        $customer->role=$req->role;
         $validator = Validator::make($req->all(), [
             'password' => 'required|confirmed',
         ]); 

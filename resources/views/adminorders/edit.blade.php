@@ -51,13 +51,15 @@
                     
                 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary w-100" style="background-color:#1d7874">Edit</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-4" style="background-color:#1d7874">Edit</button>
                     </div>
                 </div>
 
+
+
 </form>
 
-
+                      <a class="p-2 mt-2"  href="/admin/orders">Back</a>
                 
                       
 </div>

@@ -32,10 +32,16 @@
                         <label for="floatingPassword">Password</label>
                     </div>
 
+
                     <div class="form-floating mt-3">
                         <input type="password" name="password_confirmation" class="form-control" id="confirmpassword" placeholder="Confirm password" required>
                         <label for="floatingPassword">Comfirm password</label>
                         <div class="form-text confirm-message"></div>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="hidden" name="role"  value ="user" class="form-control" id="password" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
                     </div>
 
                     <div class="form-floating mt-3">

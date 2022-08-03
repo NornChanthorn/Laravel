@@ -49,9 +49,8 @@ if (Session::has('customer')) {
       @if(Session::has('customer') && Session::get('customer')['role'] =="user")
       <div class="dropdown" style="margin-right:10px; margin-left:10px">
 
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           {{Session::get('customer')['name']}}
-          {{Session::get('customer')['id']}}
         </button>
 
         <ul class="dropdown-menu">

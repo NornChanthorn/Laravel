@@ -4,7 +4,7 @@
 <div class="container p-5 d-flex justify-content-center align-items-center flex-column">
 
 <h3>Edit Product</h3>
-                <form action="{{ route('products.update',$product->id) }}" method="POST" class="w-75>
+                <form action="{{ route('products.update',$product->id) }}" method="POST" class="w-75">
                 @csrf
                         @method('PUT')
                 
@@ -46,12 +46,15 @@
                                     <input type="text" name="gallery" value="{{ $product->gallery }}" class="form-control" placeholder="gallery">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-4">
                             <button type="submit" class="btn btn-primary w-100" style="background-color:#1d7874" >Edit</button>
                             </div>
                         </div>
                 
                     </form>
+
+                    <a class="p-2 mt-2"  href="/admin/products">Back</a>
+
 </div>
 
 

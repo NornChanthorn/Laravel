@@ -120,6 +120,12 @@
                                                     <div class="buy_now">
                                                         <h6>{{$item['name']}}</h6>
                                                     </div>
+                                                    <!-- <div class="buy_now">
+                                                        <h6>{{$item['gallery']}}</h6>
+                                                    </div>
+                                                    <div class="buy_now">
+                                                        <h6>{{$item['category']}}</h6>
+                                                    </div> -->
                                                 </div>
 
                                                 <div class="image_overlay blur">

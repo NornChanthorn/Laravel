@@ -3,6 +3,9 @@
 @section('content')
 <div class="container mt-5">
     <h3 class="mb-3">Order Information</h3>
+                        <div class="pull-right mb-4">
+                            <a class="btn btn-success" href="{{ route('orders.create') }}" style="background-color:#1d7874">Add New Order</a>
+                        </div>
             <table class="table table-bordered">
                     <tr>
                         <th>No</th>
@@ -43,9 +46,9 @@
 
                     
                 </table>
-                <div class="pull-right">
-                            <a class="btn btn-success" href="{{ route('orders.create') }}">Add New Order</a>
-                        </div>
+                
+                <a class="p-2 mt-2"  href="/admin/main">Back</a>
+                        
 </div>
     
 

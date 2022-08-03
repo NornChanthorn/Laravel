@@ -40,6 +40,8 @@
                         </div>
                 
                     </form>
+
+                    <a class="p-2 mt-2"  href="/admin/customers">Back</a>
 </div>
 
 
