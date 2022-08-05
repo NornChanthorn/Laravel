@@ -107,6 +107,7 @@
             <div class="card-1-container gap-2">
 
             @foreach ($product as $item)
+                @if($item['id']<11)
 
 
                         <a href="detail/{{$item['id']}}">
@@ -148,9 +149,11 @@
                                         </div>  
 
                             </a>
+                @endif
 
-                            @endforeach
 
+             @endforeach
+                   
 
                             <center><a href="/allProduct">View More</a></center>
 

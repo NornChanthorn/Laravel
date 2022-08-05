@@ -52,13 +52,17 @@ class ProductController extends Controller
         return Cart::where('customer_id',$customerId)->count();
     }
     function cartlist(){
-        $customerId=Session::get('customer')['id'];
-        $products = DB::table('cart')
-        ->join('products','cart.product_id','=','products.id')
-        ->where('cart.customer_id',$customerId)
-        ->select('products.*','cart.id as cart_id')
-        ->get();
-        return view('cartlist',['product'=>$products]);
+        if(session()->has('product')=="") {
+            return view('cartlist',['product'=>"No order"]);
+        }else {
+            $customerId=Session::get('customer')['id'];
+            $products = DB::table('cart')
+            ->join('products','cart.product_id','=','products.id')
+            ->where('cart.customer_id',$customerId)
+            ->select('products.*','cart.id as cart_id')
+            ->get();
+            return view('cartlist',['product'=>$products]);
+        }
     }
     function removeCart($id){
         Cart::destroy($id);
@@ -91,6 +95,7 @@ class ProductController extends Controller
         return redirect('/');
     }
     function myOrders(){
+    
         $customerId=Session::get('customer')['id'];
         $orders = DB::table('orders')
         ->join('products','orders.product_id','=','products.id')
