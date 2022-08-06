@@ -3,18 +3,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Customer;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 
 {
-    
     function login(Request $req){
         $customer = Customer::where(['email'=>$req->email])->first();
-        if(!$customer || !Hash::check($req->password,$customer->password)){
-            return view('login',['error'=>"Login Failed Try Again"]);
+        if(!$customer){
+            return view('login',['error'=>"Email does not exist!"]);
         }
-        else if ($customer['role']=='admin'){
+        else if(!Hash::check($req->password,$customer->password)){
+            return view('login',['error1'=>"Invalid password!"]);
+        }
+        else if($customer['role']=='admin'){
             $req->session()->put('admin',$customer);
             return redirect('admin/main');
         }
@@ -22,51 +25,24 @@ class CustomerController extends Controller
             $req->session()->put('customer',$customer);
             return redirect('/');
         }
-    
     }
     function register(request $req){
-        //return $req->input();
-    
-        // $user ='user';
         $customer = new Customer;
         $customer->name = $req->name;
         $customer->email = $req->email;
-        $customer->role=$req->role;
+        $customer->role  = $req->role;
         $validator = Validator::make($req->all(), [
             'password' => 'required|confirmed',
         ]); 
         if($validator->fails()){
-            return "Incorrect Confirm password";
+            return view('register',['error'=>"Confirm password does not match!"]);
         }
-        
-
         else{
             $customer->password=Hash::make($req->password);
-        }
-        
+        }  
         $customer->save();
         return redirect('/login');
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -99,7 +75,6 @@ class CustomerController extends Controller
                         ->with('success','Customer created successfully.');
     }
 
-   
     public function show(Customer $customer)
     {
         
