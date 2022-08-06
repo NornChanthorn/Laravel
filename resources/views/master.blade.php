@@ -27,6 +27,7 @@
       <link rel="stylesheet" href="{{ url('detail.css') }}">
       <link rel="stylesheet" href="{{ url('cart.css') }}">
       <link rel="stylesheet" href="{{ url('cartList.css') }}">
+      <link rel="stylesheet" href="{{ url('myorder.css') }}">
 
 
 

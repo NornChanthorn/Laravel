@@ -1,0 +1,23 @@
+.myorder-container {
+    display: flex;
+
+}
+.myorder-container .col {
+    margin:0 15px 0 15px;
+}
+.myorder-container  {
+    background-color: none;
+}
+.image-size {
+    width: 380px;
+}
+
+@media only screen and (max-width: 900px) {
+    .myorder-container {
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+      
+    
+    }
+}

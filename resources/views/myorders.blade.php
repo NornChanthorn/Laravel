@@ -1,27 +1,32 @@
 @extends('master')
 @section('content')
-<div class="container custom-product " style="background-color:white">
-    <div class="col-sm-11">
+<div class="d-flex justify-content-center aligns-items-center custom-product " style="background-color:white">
+    <div class="col-sm-11 d-flex justify-content-center aligns-items-center">
         <div class="trending-wrapper">
             <h4>My Orders list</h4>
 
-            <div class="container">
+            <div >
                 @foreach ($orders as $item)
-                <div class="row search-item cart-list-divider">
+                <div class="myorder-container ">
 
                     <div class="col mt-3">
                         <a href="detail/{{$item->id}}">
-                            <img class="trending-image" src="{{$item->gallery}}" class="d-block w-100" alt="...">
+                        <img src="./image/{{$item->category}}/{{$item->gallery}}" class="image-size shadow-lg"alt="">  
                         </a>
                     </div>
 
-                    <div class="col mt-2">
-                        <div class="">
-                            <h2 style="color:black">Name : {{$item->name}}</h2>
-                            <h5 style="color:black">Delivery Status : {{$item->status}}</h5>
+                    <div class="col mt-3">
+                        <div class="text-start">
+                            <h2 class="text-dark mb-5">Name : {{$item->name}}</h2>
+                            <p>Delivery Status : {{$item->status}}</p>
+                            <p>Address : {{$item->address}}</p>
+                            <p>Payment Status : {{$item->payment_status}}</p>
+                            <p>Payment Method : {{$item->payment_method}}</p>
+                         
+                            <!-- <h5 style="color:black">Delivery Status : {{$item->status}}</h5>
                             <h5 style="color:black">Address : {{$item->address}}</h5>
                             <h5 style="color:black">Payment Status : {{$item->payment_status}}</h5>
-                            <h5 style="color:black">Payment Method : {{$item->payment_method}}</h5>
+                            <h5 style="color:black">Payment Method : {{$item->payment_method}}</h5> -->
                         </div>
                     </div>
                 </div>

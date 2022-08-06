@@ -107,7 +107,7 @@
             <div class="card-1-container gap-2">
 
             @foreach ($product as $item)
-                @if($item['id']<11)
+              
 
 
                         <a href="detail/{{$item['id']}}">
@@ -149,13 +149,11 @@
                                         </div>  
 
                             </a>
-                @endif
-
+              
 
              @endforeach
                    
 
-                            <center><a href="/allProduct">View More</a></center>
 
 
                         
@@ -165,7 +163,8 @@
 </div>
 
 
- 
+<a href="/allProduct" class="m-5">View More</a>
+
 
 <!-- Overlay Animation  -->
 

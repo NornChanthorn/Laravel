@@ -52,15 +52,17 @@ class ProductController extends Controller
         return Cart::where('customer_id',$customerId)->count();
     }
     function cartlist(){
-        if(session()->has('product')=="") {
+
+        $customerId=Session::get('customer')['id'];
+        $products = DB::table('cart')
+        ->join('products','cart.product_id','=','products.id')
+        ->where('cart.customer_id',$customerId)
+        ->select('products.*','cart.id as cart_id')
+        ->get();
+        if($products->count()==0) {
             return view('cartlist',['product'=>"No order"]);
         }else {
-            $customerId=Session::get('customer')['id'];
-            $products = DB::table('cart')
-            ->join('products','cart.product_id','=','products.id')
-            ->where('cart.customer_id',$customerId)
-            ->select('products.*','cart.id as cart_id')
-            ->get();
+          
             return view('cartlist',['product'=>$products]);
         }
     }
