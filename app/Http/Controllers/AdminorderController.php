@@ -73,7 +73,7 @@ class AdminorderController extends Controller
   
     public function destroy(Order $order)
     {
-        $product->delete();
+        $order->delete();
     
         return redirect()->route('orders.index')
                         ->with('success','Product deleted successfully');
