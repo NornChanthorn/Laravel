@@ -21,7 +21,9 @@ use Illuminate\Support\Facades\Session;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get("/about", function () {
+    return view('about');
+});
 Route::get("/login", function () {
     return view('login');
 });
@@ -102,7 +104,6 @@ Route::resource('admin/customers',CustomerController::class);
 Route::resource('admin/orders', AdminorderController::class);
 
 Route::get("allProduct",[ProductController::class,'allproduct']);
-
 // Route::get("admin/main/logout", function () {
 //     Session::forget('admin');
 //     return redirect('admin');
