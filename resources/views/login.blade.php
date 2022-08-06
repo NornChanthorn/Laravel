@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md img-responsive" style=" text-align:center" >
+        <div class="col-md img-responsive mb-3" style=" text-align:center" >
             <img src="https://cdn.shopify.com/s/files/1/0010/5083/7047/products/Sid_and_Link_Men_s_context_fdfbe630-5cce-4eb3-b50d-20b5ab792d2b.jpg?v=1600974641" width="100%" alt="">
         </div>
         
