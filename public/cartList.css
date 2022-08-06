@@ -19,16 +19,17 @@
 .remove{
     margin-top: 5px;
 }
-.btnOrder{
-  
-   
-}
+
 .container{
     border-radius: 15px;
 }
 .price h5{
     margin-top: 5px;
     
+}
+
+h3{
+    color: gold;
 }
 
 .cart_divider{
