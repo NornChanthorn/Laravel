@@ -36,7 +36,7 @@ if (Session::has('customer')) {
             </ul>
           </li>
         </ul>
-
+        
         <form action="/search" class="d-flex justify-content-center align-items-center">
           <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
           <button class="btn search-btn " type="submit">Search</button>

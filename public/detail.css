@@ -18,6 +18,9 @@
   color: white;
   border-radius: 0;
 }
+.btn-add-to-cart:hover{
+    opacity: 0.7;
+}
 .detail-container {
     display: flex;
     justify-content: center;

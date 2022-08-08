@@ -20,9 +20,9 @@
       </div> -->
         <div class="des d-flex justify-content-center aligns-item-start flex-column gap-3">
             <h3>{{$product->name}}</h3>
-            <h4><span class="text-light">Price : </span> <span style="color: gold ;">${{$product->price}}</span></h4>
-            <p><span class="text-light">Details : </span> {{$product->description}}</p>
-            <p><span class="text-light">Category : </span> {{$product->category}}</p>
+            <h4><span class="text-dark">Price : </span> <span style="color: gold ;">${{$product->price}}</span></h4>
+            <p><span class="text-dark">Details : </span> {{$product->description}}</p>
+            <p><span class="text-dark">Category : </span> {{$product->category}}</p>
            
         </div>
        

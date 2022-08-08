@@ -16,7 +16,7 @@
 
         <div class="col-md" style="text-align:center">
         <h3>REGISTER</h3>
-            <h6 class="mb-3">Let's be our SOUVENIR family</h6>
+            <h6 class="mb-3 text-light">Let's be our SOUVENIR family</h6>
             <div class="container" style="border-radius:0px; padding:20px; background-color:black">
                 <form action="/register" method="POST">
                     @csrf

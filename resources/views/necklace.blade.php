@@ -10,7 +10,7 @@
 <div class="main_dashboard mt-5">
                 <div class="col1">
                  <h3>Necklace</h3>
-                 <p class="text-light">Lorem ipsum dolor sit amet consectetur</p>
+                 <p class="text-dark">Lorem ipsum dolor sit amet consectetur</p>
                 </div>
              
             </div>

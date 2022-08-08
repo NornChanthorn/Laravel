@@ -14,7 +14,7 @@
          </div>
       
       @else    
-        <div class="container bg-dark" style="border-radius:0">
+        <div class="container bg-light" style="border-radius:0">
            
                 @foreach ($product as $item)
                   
@@ -28,8 +28,8 @@
 
                     <div class="col mt-3">
                         <div class="des1">
-                            <h3 style="color:white">{{$item->name}}</h3>
-                            <h6 style="color:white">{{$item->description}}</h6>
+                            <h3 style="color:black">{{$item->name}}</h3>
+                            <h6 style="color:black">{{$item->description}}</h6>
                         </div>
                     </div>
 

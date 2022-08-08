@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="bg-dark">
+<body>
     {{View::make('header')}}
     @yield('content')
     {{View::make('footer')}}
