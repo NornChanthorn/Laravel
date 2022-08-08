@@ -10,7 +10,7 @@
 <div class="main_dashboard mt-5">
                 <div class="col1">
                  <h3>Other Product</h3>
-                 <p>Lorem ipsum dolor sit amet consectetur</p>
+                 <p class="text-light">Lorem ipsum dolor sit amet consectetur</p>
                 </div>
              
             </div>

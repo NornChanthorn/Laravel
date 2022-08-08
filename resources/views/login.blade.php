@@ -24,8 +24,8 @@
         </div>
         
         <div class="col-md" style=" text-align:center">
-            <h3>EXISTING CUSTOMER</h3>
-            <h6 class="mb-3">Welcome to SOUVENIR </h6>
+            <h3 >EXISTING CUSTOMER</h3>
+            <h6 class="mb-3 text-light">Welcome to SOUVENIR </h6>
             <div class="container" style="border-radius:0px; padding:20px; background-color:black">
                 <form action="/login" method="POST">
                 @csrf

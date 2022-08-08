@@ -1,9 +1,9 @@
 @extends('master')
 @section('content')
-<div class="d-flex justify-content-center aligns-items-center custom-product " style="background-color:white">
+<div class="d-flex justify-content-center aligns-items-center custom-product " >
     <div class="col-sm-11 d-flex justify-content-center aligns-items-center">
         <div class="trending-wrapper">
-            <h4>My Orders list</h4>
+            <h3 class="mb-3">My Orders list</h3>
 
             <div >
                 @foreach ($orders as $item)
@@ -16,8 +16,8 @@
                     </div>
 
                     <div class="col mt-3">
-                        <div class="text-start">
-                            <h2 class="text-dark mb-5">Name : {{$item->name}}</h2>
+                        <div class="text-start text-light">
+                            <h2 class="text-light mb-5">Name : {{$item->name}}</h2>
                             <p>Delivery Status : {{$item->status}}</p>
                             <p>Address : {{$item->address}}</p>
                             <p>Payment Status : {{$item->payment_status}}</p>
