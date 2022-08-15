@@ -15,6 +15,7 @@
                         <th>Category</th>
                         <th>Description</th>
                         <th>Gallery</th>
+                        <th>In Stock</th>
         
                     
                        
@@ -26,6 +27,13 @@
                         <td>{{ $product->category }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->gallery }}</td>
+                        <td>
+                           @if($product->is_in_stock==1) 
+                             In Stock 
+                            @else 
+                             Out Of Stock 
+                            @endif
+                        </td>
                     </tr>
                     
 

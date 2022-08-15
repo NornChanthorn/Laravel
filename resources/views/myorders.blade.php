@@ -20,6 +20,8 @@
                             <h2 class="text-dark mb-5">Name : {{$item->name}}</h2>
                             <p>Delivery Status : {{$item->status}}</p>
                             <p>Address : {{$item->address}}</p>
+                            <p>Quantity : {{$item->qty}}</p>
+                            <p>Total : {{$item->total}}$</p>
                             <p>Payment Status : {{$item->payment_status}}</p>
                             <p>Payment Method : {{$item->payment_method}}</p>
                             <!-- <h5 style="color:black">Delivery Status : {{$item->status}}</h5>

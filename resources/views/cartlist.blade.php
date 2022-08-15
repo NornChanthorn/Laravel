@@ -29,12 +29,13 @@
                     <div class="col mt-3">
                         <div class="des1">
                             <h3 style="color:black">{{$item->name}}</h3>
-                            <h6 style="color:black">{{$item->description}}</h6>
+                            <p style="color:black">{{$item->qty}} Items - Total : {{$item->total}}$</p>
+                            <p style="color:grey">{{$item->description}}</p>
                         </div>
                     </div>
 
                     <div class="col mt-3 price">
-                       <h5 style="color: gold;"> $ {{$item->price}}</h5>
+                       <h5 style="color: #1d7874;"> $ {{$item->price}}</h5>
                     </div>
 
                     <div class="col mt-3">

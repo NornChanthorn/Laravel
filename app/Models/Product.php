@@ -17,6 +17,7 @@ class Product extends Model
             'category',
             'description',
             'gallery',
+            'is_in_stock'
            
         ];
     

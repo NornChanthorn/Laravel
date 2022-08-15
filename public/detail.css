@@ -5,6 +5,9 @@
 .row{
     padding: 30px;
 }
+.col img {
+   border-radius: 20px;
+}
 
 .des{
     margin-top: 10%;
@@ -17,6 +20,7 @@
   background-color: #1d7874;
   color: white;
   border-radius: 0;
+  border-radius: 15px;
 }
 .btn-add-to-cart:hover{
     opacity: 0.7;

@@ -24,7 +24,7 @@
         </div>
         
         <div class="col-md" style=" text-align:center">
-            <h3 >EXISTING CUSTOMER</h3>
+            <h3 >Welcome</h3>
             <h6 class="mb-3 text-light">Welcome to SOUVENIR </h6>
             <div class="container" style="border-radius:0px; padding:20px; background-color:black">
                 <form action="/login" method="POST">
@@ -46,10 +46,7 @@
                     <div class="form-floating mt-3">
                         <button type="submit" style="width:100%; background-color:#00ba99; border: white solid 1px ;border-radius:0px;" class="btn btn-primary btn-lg btn-block">LOGIN</button>
                     </div>
-                    <div class="mt-3">
-                        <a style="text-align:center; color:white " href="/"><span>Forgot password?</span></a>
-                        <hr style="color:white">
-                    </div>
+           
                     <div style="text-align:center;">
                         <a href="register"><button type="button" style="width:60%;border-radius:0px; background-color:#00b05f;border: white solid 1px" class="btn btn-primary btn-lg btn-block">REGISTER</button></a>
                     </div>

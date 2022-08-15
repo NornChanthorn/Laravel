@@ -43,9 +43,25 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Gallery</strong>
-                                    <input type="text" name="gallery" value="{{ $product->gallery }}" class="form-control" placeholder="gallery">
+                                    <input type="file" name="gallery" value="{{ $product->gallery }}" class="form-control" placeholder="gallery">
                                 </div>
                             </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 my-2">
+                            <div class="form-group d-flex justify-content-center gap-5">
+                                <div>
+                                    <input type="radio" id="html" name="is_in_stock" value="1">
+                                    <label for="true">In Stock</label><br>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="css" name="is_in_stock" value="0">
+                                    <label for="false">Out Of Stock</label><br>
+                                </div>
+                                   
+                                    
+                                    </div>
+                        </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-4">
                             <button type="submit" class="btn btn-primary w-100" style="background-color:#1d7874" >Edit</button>
                             </div>

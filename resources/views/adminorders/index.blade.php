@@ -10,11 +10,13 @@
                     <tr>
                         <th>No</th>
                         <th>Product Id</th>
-                        <th>Product Customer</th>
-                        <th>Status</th>
+                        <th>Customer Id</th>
+                       
                         <th>Payment Method</th>
                         <th>Payment Status</th>
                         <th>Address</th>
+                        <th>Qty</th>
+                        <th>Total</th>
                         <th>Action</th>
                     </tr>
                     @foreach ($orders as $order)
@@ -22,11 +24,12 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $order->product_id }}</td>
                         <td>{{ $order->customer_id }}</td>
-                        <td>{{ $order->status }}</td>
+                     
                         <td>{{ $order->payment_method }}</td>
                         <td>{{ $order->payment_status }}</td>
                         <td>{{ $order->address }}</td>
-
+                        <td>{{ $order->qty }}</td>
+                        <td>{{ $order->total }}$</td>
 
                         <td>
                             <form action="{{ route('orders.destroy',$order->id) }}" method="POST">

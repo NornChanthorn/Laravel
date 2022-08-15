@@ -47,6 +47,22 @@
                             <input type="text" name="address" class="form-control" placeholder="Address" value="{{ $order->address }}">
                         </div>
                     </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Quantity</strong>
+                            <input type="text" name="qty" class="form-control" placeholder="Qty" value="{{ $order->qty }}">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Total</strong>
+                            <input type="text" name="total" class="form-control" placeholder="Total" value="{{ $order->total }}">
+                        </div>
+                    </div>
+                    
                     
                     
                 

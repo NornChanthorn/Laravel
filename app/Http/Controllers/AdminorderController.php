@@ -60,7 +60,10 @@ class AdminorderController extends Controller
             'status' => 'required',
             'payment_method' => 'required',
             'payment_status' => 'required',
-            'address'=> 'required'
+            'address'=> 'required',
+            'qty' => 'required',
+            'total'=> 'required'
+
 
         ]);
     

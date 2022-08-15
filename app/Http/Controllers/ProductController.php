@@ -11,13 +11,16 @@ class ProductController extends Controller
 {
     //
     function userindex(){
-        $hello ="Panha";
-        $data=Product::all();
-        return view('product',['product'=>$data ,'hi'=>$hello]);
+        
+    
+        $data = Product::latest()->paginate(12);
+
+        return view('product',['product'=>$data ]);
     }
-    function detail($id){
+    function detail($id,Request $req){
         $data = Product::find($id);
-        return view('detail',['product'=>$data]);
+        $qty =$req->qty;
+        return view('detail',['product'=>$data ,'qty'=>$qty]);
     }
     function search(Request $req){
         if($req->input('query')=="") {
@@ -39,7 +42,11 @@ class ProductController extends Controller
             $cart = new Cart;
             $cart->customer_id = $req->session()->get('customer')['id'];
             $cart->product_id = $req->product_id;
+            $productPrice = Product::where('id',  $cart->product_id)->pluck('price')->first();
+            $cart->qty = $req->qty;
+            $cart->total=  $cart->qty*$productPrice;
             $cart->save();
+
             return redirect('/');
         }
         else{
@@ -57,7 +64,7 @@ class ProductController extends Controller
         $products = DB::table('cart')
         ->join('products','cart.product_id','=','products.id')
         ->where('cart.customer_id',$customerId)
-        ->select('products.*','cart.id as cart_id')
+        ->select('*','cart.id as cart_id')
         ->get();
         if($products->count()==0) {
             return view('cartlist',['product'=>"No order"]);
@@ -75,7 +82,7 @@ class ProductController extends Controller
         $total = $products = DB::table('cart')
         ->join('products','cart.product_id','=','products.id')
         ->where('cart.customer_id',$customerId)
-        ->sum('products.price');
+        ->sum('cart.total');
         return view('ordernow',['total'=>$total]);
     }
     function orderPlace(Request $req){
@@ -90,6 +97,8 @@ class ProductController extends Controller
             $order->payment_method=$req->payment;
             $order->payment_status="pending";
             $order->address=$req->address;
+            $order->qty=$cart['qty'];
+            $order->total=$cart['total'];
             $order->save();
             Cart::where('customer_id',$customerId)->delete();
          }
@@ -166,6 +175,7 @@ class ProductController extends Controller
             'category' => 'required',
             'description' => 'required',
             'gallery' => 'required',
+            'is_in_stock' => 'required',
 
         ]);
     
@@ -196,6 +206,7 @@ class ProductController extends Controller
             'category' => 'required',
             'description' => 'required',
             'gallery' => 'required',
+            'is_in_stock' => 'required',
 
         ]);
     
